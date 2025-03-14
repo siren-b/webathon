@@ -12,7 +12,7 @@ Velkommen til Webkoms episke hackathon 2025!
 
 ### Oppstart
 
-Vi starter med et smell **fredag 28. mars 17:00**. Det blir først en kort presentasjon om regler ([står også under](#regler)) og diverse info om hackathonet. I tillegg presenterer vi tre stikkord som dere skal basere prosjektene deres rundt. Så blir det en liten introduksjon til react og nextjs for de som ønsker det. Baren åpner også etterhvert. Se [hvordan man kommer igang](#komme-igang).
+Vi starter med et smell **fredag 28. mars 17:00**. Det blir først en kort presentasjon om regler ([står også under](#regler)) og diverse info om hackathonet. I tillegg presenterer vi tre stikkord som dere skal basere prosjektene deres rundt. Så blir det en liten introduksjon til react og nextjs for de som ønsker det. Baren åpner også etterhvert. Se [hvordan man kommer i gang](#komme-i-gang).
 
 Gjennom hele helgen vil det være medlemmer av Webkom til stede for å hjelpe og svare på spørsmål.
 
@@ -30,28 +30,27 @@ På søndag 12:00 skal alle presentere prosjektene sine og de blir vurdert av en
 3. Man kan bruke valgfritt språk.
 4. Det er lov å bruke rammeverk og biblioteker.
 5. Man må levere prosjektet **innen 12:00 på søndag**. Se [hvordan levere prosjektet](#levering).
+6. Prosjektet sin README skal inneholde følgende:
+   - Gruppenavn og navn på medlemmer
+   - Hva idéen er og hvordan dere har implementert den
+   - Hvordan laste ned og kjøre koden
+   - Ikke et krav, men fint om det inneholder screenshots også
 
 ## Vurdering
 
-Hvert prosjekt blir vurdert av en juri bestående av Webkom og Bekk. Prosjektene blir vurdert på de følgende kriteriene, og hver kriterie gir fra 0 til x antall poeng (står for hvert kriterie under) og den samlede scoren for hvert kriterie fra hvert jurimedlem som er den totale scoren til prosjektet.
+Hvert prosjekt blir vurdert av en juri bestående av Webkom og Bekk. Prosjektene blir vurdert på kriteriene under. Hver kriterie har en maks antall poeng. Den samlede scoren for hver kriterie fra hvert jurimedlem er den totale scoren til prosjektet.
 
 - **Idé (10):** Hvor unik idéen er. Hvor godt den er gjennomført.
 
-- **Kode (5):** Hvor mye er laget selv. Hvor kreative løsningene er.
+- **Kode (5):** Hvor mye som er laget selv. Hvor kreative løsningene er.
 
 - **Presentasjon (5):** Hvor bra idéen og prosjektet som helhet ble presentert.
 
-- **Stikkord (5):** Hvor unik tolkningen av stikkordene er.
+- **Stikkord (5):** Hvor unik og kreativ tolkningen av stikkordene er.
 
-## Komme igang
+## Komme i gang
 
-Fork dette repoet (må være public).
-
-README skal oppdateres til å inneholde følgende informasjon:
-
-- Gruppenavn og hvem som er med
-- Hva idéen er og hvordan dere har implementert den
-- Hvordan laste ned og kjøre koden
+Fork dette repoet (må være public). Husk å skrive om README etter regel 6!
 
 ## Levering
 
