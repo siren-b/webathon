@@ -12,7 +12,7 @@ Velkommen til Webkoms episke hackathon 2025!
 
 ### Oppstart
 
-Vi starter med et smell **fredag 28. mars 17:00**. Det blir først en kort presentasjon om regler ([står også under](#regler)) og diverse info om hackathonet. Så blir det en kort introduksjon til react og nextjs for de som ønsker det. Baren åpner også etterhvert. Se [hvordan man kommer igang](#komme-igang).
+Vi starter med et smell **fredag 28. mars 17:00**. Det blir først en kort presentasjon om regler ([står også under](#regler)) og diverse info om hackathonet. I tillegg presenterer vi tre stikkord som dere skal basere prosjektene deres rundt. Så blir det en liten introduksjon til react og nextjs for de som ønsker det. Baren åpner også etterhvert. Se [hvordan man kommer igang](#komme-igang).
 
 Gjennom hele helgen vil det være medlemmer av Webkom til stede for å hjelpe og svare på spørsmål.
 
