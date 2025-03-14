@@ -1,11 +1,11 @@
-# webathon
+# Webathon 2025
 
 Velkommen til Webkoms episke hackathon 2025!
 
-- **📍 Hvor?** Lesesalen på Høytek
+- **📍 Hvor?** Programmerbar på Høytek
 - **📃 Hva?** [Se reglene for mer info om hva dere skal gjøre](#regler)
 - **🕙 Når?** Fra fredag 28. mars til søndag 30. mars
-- **🍕 Mat?** Ja! Det blir pizza og gyros både fredag og lørdag
+- **🍕 Mat?** Ja! Det blir mat fredag og lørdag
 - **🎁 Premie?** Dritkul premie til vinnerlaget!
 
 ## Opplegg
@@ -33,7 +33,6 @@ På søndag 12:00 skal alle presentere prosjektene sine og de blir vurdert av en
 6. Prosjektet sin README skal inneholde følgende:
    - Gruppenavn og navn på medlemmer
    - Hva idéen er og hvordan dere har implementert den
-   - Hvordan laste ned og kjøre koden
    - Ikke et krav, men fint om det inneholder screenshots også
 
 ## Vurdering
