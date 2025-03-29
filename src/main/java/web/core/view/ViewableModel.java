@@ -8,6 +8,7 @@ import web.core.model.Player;
 
 public interface ViewableModel {
     GameState getGameState();
+    int getKillCount();
     void pressPlay();
     Player getPlayer();
     ArrayList<Bird> getBirds();
