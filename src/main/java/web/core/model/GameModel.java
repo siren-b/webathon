@@ -13,6 +13,7 @@ public class GameModel implements ViewableModel, ControllableModel {
     ArrayList<Bird> birds;
     int killCount;
     int escapeCount;
+    Timer.Task timerTask;
 
     public GameModel(){
         this.gameState = GameState.MENU;
@@ -20,12 +21,9 @@ public class GameModel implements ViewableModel, ControllableModel {
         birds = new ArrayList<>();
         birds.add(new Bird());
         this.killCount = 0;
-        Timer.schedule(new Timer.Task() {
-            @Override
-            public void run() {
-                addBird();
-            }
-        }, 1, 1); // Starts after 1 second, repeats every 1 second
+
+
+        
     }
 
     private void addBird(){
@@ -78,11 +76,18 @@ public class GameModel implements ViewableModel, ControllableModel {
     @Override
     public void pressPlay() {
         this.gameState = GameState.GAME_ACTIVE;
+        this.timerTask = Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                addBird();
+            }
+        }, 1, 1);
     }
 
     @Override
     public void pressPause() {
         this.gameState = GameState.GAME_PAUSED;
+        this.timerTask.cancel();
     }
 
     @Override

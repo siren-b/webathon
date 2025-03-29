@@ -7,7 +7,7 @@ import web.core.model.Direction;
 import web.core.model.GameState;
 import web.core.view.GameView;
 
-public class Controller {//implements ICommandListener{
+public class Controller implements ICommandListener{
     ControllableModel model;
     GameView view;
     GameState gameState;
@@ -17,9 +17,8 @@ public class Controller {//implements ICommandListener{
         this.view = view;
         this.gameState = model.getGameState();
 
-        // view.addCommandListener(this);
+        view.addCommandListener(this);
     }
-
     public void handleInput(float deltaTime) {
         gameState = model.getGameState();
 

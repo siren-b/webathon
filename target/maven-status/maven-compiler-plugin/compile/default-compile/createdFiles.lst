@@ -2,9 +2,7 @@ web\core\model\Player.class
 web\core\view\Renderer.class
 web\core\controller\CommandEnum.class
 web\core\view\IRenderer.class
-web\core\controller\ButtonType.class
 web\core\view\MenuButton.class
-web\core\controller\ButtonClickListener.class
 web\core\model\GameState.class
 web\core\view\ViewableModel.class
 web\core\model\GameModel$1.class
@@ -20,7 +18,6 @@ web\core\app\GameApp.class
 web\core\controller\ICommandListener.class
 web\core\view\GameView.class
 web\core\view\ButtonClickListener$1.class
-web\core\controller\ButtonClickListener$1.class
 web\core\controller\Controller$1.class
 web\core\controller\ControllableModel.class
 web\core\model\Bird.class

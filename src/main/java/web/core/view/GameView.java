@@ -9,17 +9,22 @@ public class GameView {
     private ViewableModel model;
     private Renderer renderer;
     private final Stage stage;
+    private ICommandListener commandListener;
 
     public GameView (ViewableModel model){
         this.model = model;
-        this.renderer = new Renderer(this.model);
+        this.renderer = new Renderer(this.model, this);
         this.stage = renderer.getStage();
 
         Gdx.input.setInputProcessor(stage);
     }
 
+    public ICommandListener getCommandListener(){
+        return this.commandListener;
+    }
+
     public void addCommandListener(ICommandListener commandListener){
-        // this.renderer.addCommandListener(commandListener);
+        this.commandListener = commandListener;
     }
 
     public void render(ViewableModel model) {
