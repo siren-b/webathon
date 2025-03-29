@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
-import web.core.model.IBird;
+import web.core.model.Bird;
 import web.core.model.Player;
 
 public class GameRenderer implements IRenderer{
@@ -15,7 +15,7 @@ public class GameRenderer implements IRenderer{
     ViewableModel model;
     SpriteBatch batch;
     Stage stage;
-    ArrayList<IBird> birds;
+    ArrayList<Bird> birds;
     Player player;
     Texture playerTexture;
 

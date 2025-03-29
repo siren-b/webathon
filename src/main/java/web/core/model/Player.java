@@ -29,7 +29,7 @@ public class Player {
         int oldX = pos.x();
         int oldY = pos.y();
 
-        if ((oldX + deltaX) < 0) oldX = -deltaX; //makes new x 0
+        if ((oldX + deltaX) < 0) oldX = -deltaX;
         if ((oldX + deltaX + bounds.getWidth()) > Gdx.graphics.getWidth()) oldX = (int) (Gdx.graphics.getWidth() - deltaX - bounds.getWidth());
         if ((oldY + deltaY) < 0) oldY = -deltaY;
         if ((oldY + deltaY + bounds.getHeight()) > Gdx.graphics.getHeight()) oldY = (int) (Gdx.graphics.getHeight() - deltaY - bounds.getHeight());
