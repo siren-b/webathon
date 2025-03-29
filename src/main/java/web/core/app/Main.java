@@ -8,7 +8,7 @@ public class Main {
 
     Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
     cfg.setTitle("Crash Simulator");
-    cfg.setWindowedMode(960, 640);
+    cfg.setWindowedMode(1280, 720);
 
     new Lwjgl3Application(new GameApp(), cfg);
   }

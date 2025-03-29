@@ -15,5 +15,10 @@ public class GameModel implements ViewableModel, ControllableModel {
         return this.gameState;
     }
 
+    @Override
+    public void pressPlay() {
+        this.gameState = GameState.GAME_ACTIVE;
+    }
+
 
 }

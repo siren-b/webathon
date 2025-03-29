@@ -19,14 +19,18 @@ public class Renderer {
     private ViewableModel model;
     private GameState gameState;
 
+    private Texture menuScreen;
     private Texture background;
     
     public Renderer(ViewableModel model){
         this.model = model;
+        this.gameState = model.getGameState();
+
         this.batch = new SpriteBatch();
         this.viewport = new ScreenViewport();
         this.stage = new Stage(viewport);
 
+        this.menuScreen = new Texture("images/menu-screen.jpg");
         this.background = new Texture("images/screen.jpg");
     }
 
@@ -41,7 +45,19 @@ public class Renderer {
         ScreenUtils.clear(Color.BLACK);
         batch.begin();
 
-        batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        switch (gameState){
+            case GAME_ACTIVE:
+                batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                break;
+            case MENU:
+                batch.draw(menuScreen, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            case GAME_OVER:
+                batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                break;
+            default:
+                System.out.println("Something went wrong with gamestate in renderer");
+                break;
+        }
 
         batch.end();
 
