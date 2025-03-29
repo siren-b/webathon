@@ -5,9 +5,16 @@ import web.core.view.ViewableModel;
 
 public class GameModel implements ViewableModel, ControllableModel {
     GameState gameState;
+    Player player;
 
     public GameModel(){
         this.gameState = GameState.MENU;
+        this.player = new Player();
+    }
+
+    @Override
+    public void movePlayer(Direction d){
+        player.move(d);
     }
 
     @Override
@@ -18,6 +25,11 @@ public class GameModel implements ViewableModel, ControllableModel {
     @Override
     public void pressPlay() {
         this.gameState = GameState.GAME_ACTIVE;
+    }
+
+    @Override
+    public Player getPlayer(){
+        return this.player;
     }
 
 

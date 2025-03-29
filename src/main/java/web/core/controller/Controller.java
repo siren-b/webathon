@@ -1,12 +1,14 @@
 package web.core.controller;
 
-import web.core.model.GameModel;
+import web.core.model.GameState;
 
 public class Controller {
-    GameModel model;
+    ControllableModel model;
+    GameState gameState;
 
-    public Controller(GameModel model){
+    public Controller(ControllableModel model){
         this.model = model;
+        this.gameState = model.getGameState();
     }
     
 }

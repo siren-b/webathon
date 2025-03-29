@@ -4,6 +4,15 @@ C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\controller\Contr
 C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\controller\Controller.java
 C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\model\GameModel.java
 C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\model\GameState.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\model\IBird.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\model\Player.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\model\Position.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\ButtonClickListener.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\ButtonType.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\GameRenderer.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\IRenderer.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\MenuButton.java
+C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\MenuRenderer.java
 C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\Renderer.java
 C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\View.java
 C:\Users\siren\OneDrive\UiB\V25\webathon\src\main\java\web\core\view\ViewableModel.java

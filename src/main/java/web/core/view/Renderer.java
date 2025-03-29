@@ -2,6 +2,7 @@ package web.core.view;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -26,6 +27,7 @@ public class Renderer {
     private Texture background;
 
     private MenuRenderer menuRenderer;
+    private GameRenderer gameRenderer;
     private ArrayList<MenuButton> menuButtons;
     
     public Renderer(ViewableModel model){
@@ -37,16 +39,17 @@ public class Renderer {
         this.stage = new Stage(viewport);
 
         makeMenuButtons();
-
         this.menuRenderer = new MenuRenderer(model, batch, stage, menuButtons);
-        this.background = new Texture("images/screen.jpg"); //to be moved to GameRenderer
+
+        this.gameRenderer = new GameRenderer(model, batch, stage);
+
+        this.background = new Texture("images/screen.jpg"); //default for unimplemented parts
     }
 
     private void makeMenuButtons(){
         this.menuButtons = new ArrayList<MenuButton>();
         menuButtons.add(new MenuButton(model, "images/play.png", ButtonType.PLAY, new Position(350, 90)));
         menuButtons.add(new MenuButton(model, "images/quit.png", ButtonType.QUIT, new Position(650, 90)));
-
     }
 
     public Stage getStage(){
@@ -66,7 +69,7 @@ public class Renderer {
                 break;
             case GAME_ACTIVE:
                 menuRenderer.clearButtons();
-                batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                this.gameRenderer.render();
                 break;
             case GAME_OVER:
                 batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());

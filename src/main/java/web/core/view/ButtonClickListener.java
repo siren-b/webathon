@@ -18,7 +18,6 @@ public class ButtonClickListener extends ClickListener{
     public void clicked(InputEvent event, float x, float y) {
         switch (type) {
             case PLAY:
-                System.out.println("Play button was pressed");
                 model.pressPlay();
                 break;
             case QUIT:
