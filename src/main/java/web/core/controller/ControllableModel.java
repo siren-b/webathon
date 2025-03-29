@@ -8,5 +8,9 @@ public interface ControllableModel {
     void movePlayer(Direction d);
 
     GameState getGameState();
+
+    void pressPlay();
+
+    void goToMenu();
     
 }

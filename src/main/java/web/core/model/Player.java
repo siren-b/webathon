@@ -11,7 +11,7 @@ public class Player {
 
     public Player(){
         this.livesRemaining = 3;
-        this.moveSpeed = 10;
+        this.moveSpeed = 5;
         this.pos = new Position(120, (int) Gdx.graphics.getHeight()/2);
         this.bounds = new Rectangle(pos.x(), pos.y(), 200, 80);
 

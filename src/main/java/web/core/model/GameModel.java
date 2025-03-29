@@ -28,6 +28,11 @@ public class GameModel implements ViewableModel, ControllableModel {
     }
 
     @Override
+    public void goToMenu() {
+        this.gameState = GameState.MENU;
+    }
+
+    @Override
     public Player getPlayer(){
         return this.player;
     }
