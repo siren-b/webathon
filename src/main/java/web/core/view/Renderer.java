@@ -1,15 +1,19 @@
 package web.core.view;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import web.core.model.GameState;
+import web.core.model.Position;
 
 public class Renderer {
     private final SpriteBatch batch;
@@ -19,8 +23,10 @@ public class Renderer {
     private ViewableModel model;
     private GameState gameState;
 
-    private Texture menuScreen;
     private Texture background;
+
+    private MenuRenderer menuRenderer;
+    private ArrayList<MenuButton> menuButtons;
     
     public Renderer(ViewableModel model){
         this.model = model;
@@ -30,8 +36,17 @@ public class Renderer {
         this.viewport = new ScreenViewport();
         this.stage = new Stage(viewport);
 
-        this.menuScreen = new Texture("images/menu-screen.jpg");
-        this.background = new Texture("images/screen.jpg");
+        makeMenuButtons();
+
+        this.menuRenderer = new MenuRenderer(model, batch, stage, menuButtons);
+        this.background = new Texture("images/screen.jpg"); //to be moved to GameRenderer
+    }
+
+    private void makeMenuButtons(){
+        this.menuButtons = new ArrayList<MenuButton>();
+        menuButtons.add(new MenuButton(model, "images/play.png", ButtonType.PLAY, new Position(350, 90)));
+        menuButtons.add(new MenuButton(model, "images/quit.png", ButtonType.QUIT, new Position(650, 90)));
+
     }
 
     public Stage getStage(){
@@ -46,11 +61,13 @@ public class Renderer {
         batch.begin();
 
         switch (gameState){
+            case MENU:
+                this.menuRenderer.render();
+                break;
             case GAME_ACTIVE:
+                menuRenderer.clearButtons();
                 batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
                 break;
-            case MENU:
-                batch.draw(menuScreen, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
             case GAME_OVER:
                 batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
                 break;
@@ -67,5 +84,6 @@ public class Renderer {
 
     public void dispose() {
         batch.dispose();
+        menuRenderer.dispose();
     }
 }

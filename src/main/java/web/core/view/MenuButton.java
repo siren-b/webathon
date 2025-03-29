@@ -26,8 +26,8 @@ public class MenuButton {
         this.model = model;
         this.type = type;
 
-        this.buttonWidth = 172;
-        this.buttonHeight = 59;
+        this.buttonWidth = 276;
+        this.buttonHeight = 95;
         this.buttonPos = buttonPos;
 
         this.imgButton = new ImageButton(makeStyle(path));
@@ -44,6 +44,10 @@ public class MenuButton {
         ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle();
         style.up = drawable;
         return style;
+    }
+
+    public ImageButton getButton() {
+        return imgButton;
     }
     
 }

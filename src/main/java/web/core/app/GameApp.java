@@ -27,7 +27,6 @@ public class GameApp implements ApplicationListener {
   public void render() {
     // float deltaTime = Gdx.graphics.getDeltaTime();
     // controller.handleInput(deltaTime);
-    // model.update();
     view.render(model);
   }
 
@@ -41,8 +40,6 @@ public class GameApp implements ApplicationListener {
 
   @Override
   public void dispose() {
-    // view.dispose();
-    // model.dispose();
-    // controller.dispose();
+    view.dispose();
   }
 }
