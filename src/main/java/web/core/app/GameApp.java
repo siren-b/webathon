@@ -28,7 +28,7 @@ public class GameApp implements ApplicationListener {
     // float deltaTime = Gdx.graphics.getDeltaTime();
     // controller.handleInput(deltaTime);
     // model.update();
-    // view.render(model);
+    view.render(model);
   }
 
   @Override

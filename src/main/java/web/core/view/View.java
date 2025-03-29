@@ -1,12 +1,28 @@
 package web.core.view;
 
-import web.core.model.GameModel;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public class View {
-    GameModel model;
+    private ViewableModel model;
+    private Renderer renderer;
+    private final Stage stage;
 
-    public View (GameModel model){
+    public View (ViewableModel model){
         this.model = model;
+        this.renderer = new Renderer(this.model);
+        this.stage = renderer.getStage();
     }
-    
+
+    public void render(ViewableModel model) {
+        this.model = model;
+        this.renderer.render(model);
+
+        stage.act();
+        stage.draw();
+    }
+
+    public void dispose() {
+        renderer.dispose();
+        stage.dispose();
+    }
 }

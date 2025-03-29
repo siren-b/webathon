@@ -7,7 +7,7 @@ public class Main {
   public static void main(String[] args) {
 
     Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
-    cfg.setTitle("hei");
+    cfg.setTitle("Crash Simulator");
     cfg.setWindowedMode(960, 640);
 
     new Lwjgl3Application(new GameApp(), cfg);
