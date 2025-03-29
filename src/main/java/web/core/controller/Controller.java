@@ -16,6 +16,8 @@ public class Controller {
         this.model = model;
         this.view = view;
         this.gameState = model.getGameState();
+
+        view.addClickListener();
     }
 
     public void handleInput(float deltaTime) {
