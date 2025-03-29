@@ -1,6 +1,6 @@
 package web.core.controller;
 
-public enum ButtonType {
+public enum CommandEnum {
     PLAY,
     QUIT
 }

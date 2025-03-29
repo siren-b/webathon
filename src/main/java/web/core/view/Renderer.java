@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import web.core.controller.ICommandListener;
 import web.core.model.GameState;
 import web.core.model.Position;
 
@@ -30,6 +31,7 @@ public class Renderer {
     private MenuRenderer menuRenderer;
     private GameRenderer gameRenderer;
     private ArrayList<MenuButton> menuButtons;
+    private ICommandListener commandListener;
     
     public Renderer(ViewableModel model){
         this.model = model;
@@ -48,10 +50,14 @@ public class Renderer {
         this.pauseScreen = new Texture("images/pause-screen.jpg");
     }
 
+    public void addCommandListener(ICommandListener commandListener){
+        this.commandListener = commandListener;
+    }
+
     private void makeMenuButtons(){
         this.menuButtons = new ArrayList<MenuButton>();
-        menuButtons.add(new MenuButton(model, "images/play.png", ButtonType.PLAY, new Position(350, 90)));
-        menuButtons.add(new MenuButton(model, "images/quit.png", ButtonType.QUIT, new Position(650, 90)));
+        menuButtons.add(new MenuButton(model, "images/play.png", ButtonType.PLAY, new Position(350, 90), commandListener));
+        menuButtons.add(new MenuButton(model, "images/quit.png", ButtonType.QUIT, new Position(650, 90), commandListener));
     }
 
     public Stage getStage(){

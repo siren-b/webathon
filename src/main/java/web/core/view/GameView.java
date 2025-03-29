@@ -3,6 +3,8 @@ package web.core.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
+import web.core.controller.ICommandListener;
+
 public class GameView {
     private ViewableModel model;
     private Renderer renderer;
@@ -16,8 +18,8 @@ public class GameView {
         Gdx.input.setInputProcessor(stage);
     }
 
-    public void addClickListener(){
-        
+    public void addCommandListener(ICommandListener commandListener){
+        // this.renderer.addCommandListener(commandListener);
     }
 
     public void render(ViewableModel model) {
