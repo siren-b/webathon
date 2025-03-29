@@ -6,8 +6,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 
 import web.core.model.Bird;
 import web.core.model.Player;
@@ -15,10 +13,8 @@ import web.core.model.Player;
 public class GameRenderer implements IRenderer{
     private ViewableModel model;
     private SpriteBatch batch;
-    private Stage stage;
     private ArrayList<Bird> birds;
     private Player player;
-    private int killCount;
 
     private Texture gameScreen;
     private Texture playerTexture;
@@ -27,11 +23,9 @@ public class GameRenderer implements IRenderer{
 
     private BitmapFont font;
 
-    public GameRenderer(ViewableModel model, SpriteBatch batch, Stage stage){
+    public GameRenderer(ViewableModel model, SpriteBatch batch){
         this.model = model;
         this.batch = batch;
-        this.stage = stage;
-        this.killCount = model.getKillCount();
 
         this.player = model.getPlayer();
         this.playerTexture = new Texture("images/plane.png");
@@ -50,8 +44,6 @@ public class GameRenderer implements IRenderer{
     public void render() {        
         batch.draw(gameScreen, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
-        this.killCount = model.getKillCount();
-
         this.player = model.getPlayer();
         batch.draw(playerTexture, player.getPos().x(), player.getPos().y(), player.getBounds().getWidth(), player.getBounds().getHeight());
 
@@ -64,7 +56,9 @@ public class GameRenderer implements IRenderer{
             }
         }
 
-        font.draw(batch, "Birds killed: " + killCount, Gdx.graphics.getWidth() - 200, Gdx.graphics.getHeight() - 20);
+        font.draw(batch, "Birds killed: " + model.getKillCount(), Gdx.graphics.getWidth() - 200, Gdx.graphics.getHeight() - 20);
+        font.draw(batch, "Birds escaped: " + model.getEscapeCount(), Gdx.graphics.getWidth() - 200, Gdx.graphics.getHeight() - 40);
+
     }
 
     @Override

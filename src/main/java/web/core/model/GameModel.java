@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import web.core.controller.ControllableModel;
 import web.core.view.ViewableModel;
 
+import com.badlogic.gdx.utils.Timer;
+
 public class GameModel implements ViewableModel, ControllableModel {
     GameState gameState;
     Player player;
     ArrayList<Bird> birds;
     int killCount;
+    int escapeCount;
 
     public GameModel(){
         this.gameState = GameState.MENU;
@@ -17,12 +20,23 @@ public class GameModel implements ViewableModel, ControllableModel {
         birds = new ArrayList<>();
         birds.add(new Bird());
         this.killCount = 0;
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                addBird();
+            }
+        }, 1, 1); // Starts after 1 second, repeats every 1 second
+    }
+
+    private void addBird(){
+        this.birds.add(new Bird());
     }
 
     /**
-     * moves birds. To be called in GameApp.render()
+     * moves birds, removes from list of birds if they are out of the screen
      */
     public void update(){
+        if (escapeCount >= 10) gameState = GameState.GAME_OVER;
         birds.removeIf(Bird::isOut);
 
         for (Bird b : birds){
@@ -30,7 +44,9 @@ public class GameModel implements ViewableModel, ControllableModel {
             if (b.isAlive() && playerHitsBird(b)){
                 b.isHit();
                 this.killCount += 1;
-                System.out.println("Birds killed: " + killCount);
+            }
+            if (b.isOut() && b.isAlive()){
+                this.escapeCount += 1;
             }
         }
     }
@@ -55,8 +71,18 @@ public class GameModel implements ViewableModel, ControllableModel {
     }
 
     @Override
+    public int getEscapeCount(){
+        return escapeCount;
+    }
+
+    @Override
     public void pressPlay() {
         this.gameState = GameState.GAME_ACTIVE;
+    }
+
+    @Override
+    public void pressPause() {
+        this.gameState = GameState.GAME_PAUSED;
     }
 
     @Override

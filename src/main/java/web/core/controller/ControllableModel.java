@@ -11,6 +11,8 @@ public interface ControllableModel {
 
     void pressPlay();
 
+    void pressPause();
+
     void goToMenu();
     
 }

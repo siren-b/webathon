@@ -24,7 +24,8 @@ public class Renderer {
     private ViewableModel model;
     private GameState gameState;
 
-    private Texture background;
+    private Texture gameOverScreen;
+    private Texture pauseScreen;
 
     private MenuRenderer menuRenderer;
     private GameRenderer gameRenderer;
@@ -41,9 +42,10 @@ public class Renderer {
         makeMenuButtons();
         this.menuRenderer = new MenuRenderer(model, batch, stage, menuButtons);
 
-        this.gameRenderer = new GameRenderer(model, batch, stage);
+        this.gameRenderer = new GameRenderer(model, batch);
 
-        this.background = new Texture("images/screen.jpg"); //default for unimplemented parts
+        this.gameOverScreen = new Texture("images/over-screen.jpg");
+        this.pauseScreen = new Texture("images/pause-screen.jpg");
     }
 
     private void makeMenuButtons(){
@@ -72,7 +74,10 @@ public class Renderer {
                 this.gameRenderer.render();
                 break;
             case GAME_OVER:
-                batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                batch.draw(gameOverScreen, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                break;
+            case GAME_PAUSED:
+                batch.draw(pauseScreen, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
                 break;
             default:
                 System.out.println("Something went wrong with gamestate in renderer");

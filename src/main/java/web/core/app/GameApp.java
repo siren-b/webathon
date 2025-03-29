@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 
 import web.core.controller.Controller;
 import web.core.model.GameModel;
+import web.core.model.GameState;
 import web.core.view.View;
 
 public class GameApp implements ApplicationListener {
@@ -26,7 +27,9 @@ public class GameApp implements ApplicationListener {
   @Override
   public void render() {
     float deltaTime = Gdx.graphics.getDeltaTime();
-    model.update();
+    if (model.getGameState() == GameState.GAME_ACTIVE){
+      model.update();
+    }
     controller.handleInput(deltaTime);
     view.render(model);
   }
