@@ -5,13 +5,16 @@ import com.badlogic.gdx.Input;
 
 import web.core.model.Direction;
 import web.core.model.GameState;
+import web.core.view.GameView;
 
 public class Controller {
     ControllableModel model;
+    GameView view;
     GameState gameState;
 
-    public Controller(ControllableModel model){
+    public Controller(ControllableModel model, GameView view){
         this.model = model;
+        this.view = view;
         this.gameState = model.getGameState();
     }
 

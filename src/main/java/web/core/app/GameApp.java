@@ -6,18 +6,18 @@ import com.badlogic.gdx.Gdx;
 import web.core.controller.Controller;
 import web.core.model.GameModel;
 import web.core.model.GameState;
-import web.core.view.View;
+import web.core.view.GameView;
 
 public class GameApp implements ApplicationListener {
-  private View view;
+  private GameView view;
   private GameModel model;
   private Controller controller;
 
   @Override
   public void create() {
     model = new GameModel();
-    view = new View(model);
-    controller = new Controller(model);
+    view = new GameView(model);
+    controller = new Controller(model, view);
   }
 
   @Override
