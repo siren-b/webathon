@@ -1,0 +1,8 @@
+web\core\view\ViewableModel.class
+web\core\view\View.class
+web\core\controller\ControllableModel.class
+web\core\model\GameModel.class
+web\core\controller\Controller.class
+web\core\app\Main.class
+web\core\app\GameApp.class
+web\core\model\GameState.class
