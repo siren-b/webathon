@@ -3,20 +3,20 @@ package web.core.app;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 
-// import web.core.controller.GameController;
-// import web.core.model.GameModel;
-// import web.core.view.GameView;
+import web.core.controller.Controller;
+import web.core.model.GameModel;
+import web.core.view.View;
 
 public class GameApp implements ApplicationListener {
-//   private GameView view;
-//   private GameModel model;
-//   private GameController controller;
+  private View view;
+  private GameModel model;
+  private Controller controller;
 
   @Override
   public void create() {
-    // model = new GameModel();
-    // view = new GameView(model);
-    // controller = new GameController(model);
+    model = new GameModel();
+    view = new View(model);
+    controller = new Controller(model);
   }
 
   @Override
