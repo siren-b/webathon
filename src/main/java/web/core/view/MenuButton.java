@@ -22,7 +22,7 @@ public class MenuButton {
      * @param type decides what the button does
      * @param buttonPos position of lower left corner of button
      */
-    public MenuButton(ViewableModel model, String path, ButtonType type, Position buttonPos){
+    public MenuButton(ViewableModel model, String path, ButtonType type, Position buttonPos, GameView view){
         this.model = model;
         this.type = type;
 
@@ -33,7 +33,7 @@ public class MenuButton {
         this.imgButton = new ImageButton(makeStyle(path));
         this.imgButton.setSize(buttonWidth, buttonHeight);
         this.imgButton.setPosition(buttonPos.x(), buttonPos.y());
-        this.imgButton.addListener(new ButtonClickListener(type, model));
+        this.imgButton.addListener(new ButtonClickListener(type, model, view));
     }
 
     private ImageButton.ImageButtonStyle makeStyle(String path){

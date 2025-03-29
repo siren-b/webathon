@@ -2,13 +2,11 @@ package web.core.view;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -23,6 +21,7 @@ public class Renderer {
 
     private ViewableModel model;
     private GameState gameState;
+    private GameView view;
 
     private Texture gameOverScreen;
     private Texture pauseScreen;
@@ -31,9 +30,10 @@ public class Renderer {
     private GameRenderer gameRenderer;
     private ArrayList<MenuButton> menuButtons;
     
-    public Renderer(ViewableModel model){
+    public Renderer(ViewableModel model, GameView view){
         this.model = model;
         this.gameState = model.getGameState();
+        this.view = view;
 
         this.batch = new SpriteBatch();
         this.viewport = new ScreenViewport();
@@ -50,8 +50,8 @@ public class Renderer {
 
     private void makeMenuButtons(){
         this.menuButtons = new ArrayList<MenuButton>();
-        menuButtons.add(new MenuButton(model, "images/play.png", ButtonType.PLAY, new Position(350, 90)));
-        menuButtons.add(new MenuButton(model, "images/quit.png", ButtonType.QUIT, new Position(650, 90)));
+        menuButtons.add(new MenuButton(model, "images/play.png", ButtonType.PLAY, new Position(350, 90), view));
+        menuButtons.add(new MenuButton(model, "images/quit.png", ButtonType.QUIT, new Position(650, 90), view));
     }
 
     public Stage getStage(){
