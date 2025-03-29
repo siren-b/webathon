@@ -8,7 +8,7 @@ Velkommen til Crash Simulator.
 
 Fly og kræsj i flest mulig fugler, fly = raskt, fugler = mange, du = smart ;)
 
-![By Achille Beltrame - La Domenica del Corriere, Public Domain, https://commons.wikimedia.org/w/index.php?curid=62001392](images/wiki_birdstrike.png)
+![By Achille Beltrame - La Domenica del Corriere, Public Domain, https://commons.wikimedia.org/w/index.php?curid=62001392](src\main\resources\images\wiki_birdstrike.png)
 
 ### Hvordan lage tag
 
